@@ -1,0 +1,77 @@
+
+/*
+   Definición de variables CSS globales para colores reutilizables
+*/
+:root {
+    --color: black; /* Color principal para textos y bordes */
+    --background: rgba(81, 81, 81, 0.504); /* Color de fondo translúcido */
+}
+
+/*
+   Reset universal: elimina márgenes y paddings por defecto y usa el modelo de caja border-box
+*/
+* {
+    box-sizing: border-box; /* Incluye padding y border en el tamaño total */
+    margin: 0;              /* Elimina márgenes por defecto */
+    padding: 0;             /* Elimina padding por defecto */
+}
+
+/*
+   Barra de navegación principal con Flexbox
+*/
+.nav-menu {
+    margin-top: 10px;           /* Espacio superior respecto al borde o elemento anterior */
+    display: flex;              /* Activa Flexbox para alinear hijos en fila */
+    color: var(--background);   /* Color de texto (no afecta enlaces) */
+    width: 100%;                /* Ocupa todo el ancho disponible */
+    height: 70px;               /* Altura fija de la barra */
+    box-shadow: 2px 2px 5px var(--color); /* Sombra sutil para profundidad */
+    border-radius: 10px;        /* Bordes redondeados */
+    gap: 100px;                 /* Espacio horizontal entre los hijos directos */
+    justify-content: end;       /* Alinea los hijos al extremo derecho */
+    align-items: center;        /* Centra verticalmente los hijos */
+}
+
+/*
+   Logo de la barra de navegación
+*/
+.nav-menu__elemento-logo {
+    margin-left: 10px;          /* Espacio a la izquierda del logo */
+    width: 60px;                /* Ancho fijo para el logo */
+    margin-right: auto;         /* Empuja el resto de los elementos a la derecha */
+}
+
+/*
+   Enlaces del menú de navegación
+*/
+.nav-menu__elemento-menu {
+    text-decoration: none;      /* Quita el subrayado de los enlaces */
+    color: var(--color);        /* Color de texto definido en la variable */
+    margin-right: 10px;         /* Espacio a la derecha de cada enlace */
+}
+
+/*
+   Efecto hover para los enlaces del menú
+*/
+.nav-menu__elemento-menu:hover {
+    text-shadow: 1px 1px 5px var(--color); /* Sombra al pasar el mouse */
+    font-size: 17px;                        /* Aumenta el tamaño de fuente */
+}
+
+/*
+   Contenido principal centrado con Flexbox
+*/
+.main-content {
+    display: flex;              /* Activa Flexbox */
+    justify-content: center;    /* Centra horizontalmente el contenido */
+    align-items: center;        /* Centra verticalmente el contenido */
+    min-height: 60vh;           /* Altura mínima para centrar en la pantalla */
+}
+
+/*
+   Estilo del elemento principal dentro del contenido
+*/
+.main-content__elemento {
+    font-size: 20px;            /* Tamaño de fuente grande para destacar */
+}
+
