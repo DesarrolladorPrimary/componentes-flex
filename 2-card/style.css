@@ -1,0 +1,135 @@
+
+/*
+   Variables CSS globales para colores y medidas reutilizables
+*/
+:root {
+    --color-defecto: black;                 /* Color principal para bordes y texto */
+    --background: rgb(255, 255, 255);       /* Fondo blanco para la card */
+    --medida-repetida: 5px;                 /* Medida de ejemplo para reutilizar */
+}
+
+
+/*
+   Reset universal: elimina márgenes y paddings por defecto y usa border-box
+*/
+*{
+    margin: 0;                /* Elimina márgenes por defecto */
+    padding: 0;               /* Elimina padding por defecto */
+    box-sizing: border-box;   /* Incluye padding y border en el tamaño total */
+}
+
+
+/*
+   Barra superior de la página (header)
+*/
+.header {
+    display: flex;                        /* Activa Flexbox */
+    justify-content: center;              /* Centra horizontalmente el contenido */
+    align-items: center;                  /* Centra verticalmente el contenido */
+    background-color: rgb(45, 148, 207);  /* Fondo azul */
+    height: 70px;                         /* Altura fija */
+}
+
+
+/*
+   Título dentro del header
+*/
+.header__title {
+    font-weight: bold;                    /* Texto en negrita */
+}
+
+
+
+/*
+   Contenedor principal de la página de la card
+*/
+.card-page {
+    display: flex;                        /* Activa Flexbox */
+    justify-content: center;              /* Centra horizontalmente el contenido */
+}
+
+
+
+/*
+   Card principal: contenedor de la información del producto
+*/
+.card {
+    margin-top: 120px;                     /* Espacio superior respecto al header */
+    display: flex;                         /* Activa Flexbox */
+    flex-direction: column;                /* Elementos en columna */
+    align-items: center;                   /* Centra horizontalmente los hijos */
+    justify-content: center;               /* Centra verticalmente (por compatibilidad) */
+    justify-content: space-between;        /* Distribuye los hijos con espacio entre ellos */
+    background-color: var(--background);   /* Fondo blanco */
+    height: 480px;                         /* Altura fija de la card */
+    width: 320px;                          /* Ancho fijo de la card */
+    border-radius: 16px;                   /* Bordes redondeados */
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15), 0 1.5px 4px rgba(0,0,0,0.08); /* Sombra moderna */
+    padding: 24px 18px 18px 18px;          /* Espaciado interno */
+    gap: 12px;                             /* Espacio entre los hijos */
+    transition: box-shadow 0.2s;           /* Transición suave de sombra */
+}
+
+
+/*
+   Efecto hover para la card: sombra más intensa al pasar el mouse
+*/
+.card:hover {
+    box-shadow: 0 16px 32px rgba(0,0,0,0.22), 0 3px 8px rgba(0,0,0,0.12);
+}
+
+
+/*
+   Descripción del producto: texto centrado y estilizado
+*/
+.card__description {
+    text-align: center;                     /* Centra el texto */
+}
+
+
+/*
+   Imagen del producto: tamaño, bordes y sombra
+*/
+.card__img {
+    width: 180px;                           /* Ancho fijo de la imagen */
+    border-radius: 5px;                     /* Bordes redondeados */
+    filter: drop-shadow();                  /* Sombra (puedes ajustar el valor) */
+}
+
+
+/*
+   Botón de compra: estilo moderno y efecto hover
+*/
+.card__button {
+    border-radius: 6px;                      /* Bordes redondeados */
+    padding: 12px 28px;                      /* Espaciado interno */
+    background: linear-gradient(90deg, #1d87ce 60%, #0d5c9a 100%); /* Degradado azul */
+    color: #fff;                             /* Texto blanco */
+    font-weight: bold;                       /* Texto en negrita */
+    font-size: 1em;                          /* Tamaño de fuente */
+    border: none;                            /* Sin borde */
+    box-shadow: 0 2px 8px rgba(29,135,206,0.10); /* Sombra sutil */
+    cursor: pointer;                         /* Cursor de mano */
+    transition: background 0.2s, transform 0.15s; /* Transiciones suaves */
+}
+
+
+/*
+   Precio destacado: alineado a la izquierda y color llamativo
+*/
+.card__precio {
+    align-self: flex-start;                   /* Alinea el precio a la izquierda */
+    color: rgb(255, 149, 0);                 /* Naranja para destacar */
+}
+
+
+
+/*
+   Efecto hover para el botón de compra
+*/
+.card__button:hover {
+    background: linear-gradient(90deg, #0d5c9a 60%, #1d87ce 100%);
+    color: #fff;
+    transform: translateY(-2px) scale(1.04);  /* Efecto de elevación */
+}
+
