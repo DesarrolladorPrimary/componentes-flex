@@ -1,0 +1,113 @@
+/* ==========================================================================
+   Estilos Globales
+   ========================================================================== */
+/* Selector universal para todos los elementos */
+* {
+    margin: 0; /* Elimina el margen por defecto */
+    padding: 0; /* Elimina el padding por defecto */
+    box-sizing: border-box; /* Incluye el padding y borde en el tamaño total */
+}
+
+body {
+    font-family: sans-serif; /* Familia de fuentes principal */
+    background-color: antiquewhite; /* Fondo beige claro */
+}
+
+/* ==========================================================================
+   Componente: Encabezado
+   ========================================================================== */
+/* Bloque principal del encabezado */
+.encabezado {
+    background-color: rgba(44, 39, 39, 0.65); /* Fondo gris oscuro translúcido */
+    padding: 20px; /* Espaciado interno */
+    color: white; /* Texto blanco */
+    text-align: center; /* Centra el texto */
+    position: relative; /* Permite posicionar hijos absolutamente */
+    margin-bottom: 30px; /* Espacio inferior */
+}
+
+.encabezado__titulo {
+    margin: 0; /* Sin margen */
+}
+
+.encabezado__volver {
+    position: absolute; /* Posiciona el enlace de forma absoluta */
+    left: 20px; /* Distancia desde la izquierda */
+    top: 50%; /* Centrado vertical */
+    transform: translateY(-50%); /* Ajuste fino de centrado vertical */
+    font-weight: bold; /* Texto en negrita */
+    text-decoration: none; /* Sin subrayado */
+    color: white; /* Texto blanco */
+    border: 2px solid white; /* Borde blanco */
+    padding: 8px 15px; /* Espaciado interno */
+    background-color: transparent; /* Fondo transparente */
+    border-radius: 10px; /* Bordes redondeados */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+}
+
+.encabezado__volver:hover,
+.encabezado__volver:focus {
+    background-color: white; /* Fondo blanco al pasar el mouse */
+    color: #2c2727; /* Texto oscuro al pasar el mouse */
+}
+
+/* ==========================================================================
+   Componente: Galería
+   ========================================================================== */
+.galeria {
+    padding: 0 20px; /* Espaciado horizontal */
+}
+
+.galeria__contenedor {
+    display: flex; /* Activa Flexbox */
+    flex-wrap: wrap; /* Permite que las tarjetas bajen a otra línea */
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+    gap: 20px; /* Espacio entre tarjetas */
+    align-items: stretch; /* Estira las tarjetas para igualar alturas */
+}
+
+/* ==========================================================================
+   Componente: Tarjeta de Imagen
+   ========================================================================== */
+.tarjeta-imagen {
+    display: flex; /* Cada tarjeta es un flex container */
+    flex-direction: column; /* Elementos en columna */
+    align-items: center; /* Centra el contenido horizontalmente */
+    justify-content: flex-start; /* Arranca desde arriba */
+    width: 250px;
+    height: 400px;
+    margin: 0; /* El gap del contenedor maneja el espacio */
+    background-color: whitesmoke;
+    border-radius: 10px;
+    border: 1px solid #333;
+    overflow: hidden;
+    text-align: center;
+}
+
+.tarjeta-imagen__imagen {
+    width: 100%; /* Ocupa todo el ancho */
+    height: 85%; /* Ocupa el 85% de la altura */
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    border-bottom: 1px solid #333; /* Línea divisoria inferior */
+}
+
+.tarjeta-imagen__titulo {
+    margin-top: 15px; /* Espacio superior */
+    font-size: 1.1em; /* Tamaño de fuente */
+}
+
+/* ==========================================================================
+   Responsividad
+   ========================================================================== */
+@media (max-width: 600px) {
+    .galeria__contenedor {
+        flex-direction: column;
+        align-items: center;
+    }
+    .tarjeta-imagen {
+        width: 90vw;
+        max-width: 320px;
+        height: auto;
+    }
+}
+
