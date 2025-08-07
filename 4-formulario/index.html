@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="header__title">Formulario de contacto</h1>
+    </header>
+
+    <main class="main">
+        <form class="form" action="#enviado">
+
+            <div class="form__field">
+                <label class="form__label" for="nombre">Nombre:</label>
+                <input class="form__input form__input--required" type="text" id="nombre" required>
+            </div>
+
+            <div class="form__field">
+                <label class="form__label" for="apellido">Apellido:</label>
+                <input class="form__input form__input--required" type="text" id="apellido" required>
+            </div>
+
+            <div class="form__field">
+                <label class="form__label" for="edad">Edad:</label>
+                <input class="form__input form__input--required form__input--number" type="number" id="edad" required>
+            </div>
+
+            <div class="form__field">
+                <label class="form__label" for="correo">Correo:</label>
+                <input class="form__input form__input--required" type="email" id="correo" required>
+            </div>
+
+            <div class="form__field">
+                <label class="form__label" for="comentarios">Comentarios:</label>
+                <textarea class="form__input" type="" id="comentarios"> </textarea>
+            </div>
+
+
+            <button class="form__button" type="submit">Enviar</button>
+        </form>
+
+        <div id="enviado" class="mensaje--exito">
+            <p class="mensaje__text">¡Formulario enviado correctamente!</p>
+            <a class="mensaje__close" href="#">X</a>
+        </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,224 @@
+/* ===== RESET Y CONFIGURACIÓN GLOBAL ===== */
+* {
+    /* Selector universal que aplica a todos los elementos */
+    padding: 0;
+    /* Elimina el padding interno por defecto */
+    margin: 0;
+    /* Elimina el margen externo por defecto */
+    box-sizing: border-box;
+    /* Incluye padding y border en el ancho total */
+}
+
+/* Variables CSS para consistencia de diseño */
+:root {
+    /* Pseudo-clase que representa el elemento raíz del documento */
+    --primary-color: #007bff;
+    /* Color azul principal para botones y enlaces */
+    --primary-hover: #0056b3;
+    /* Color azul más oscuro para estado hover */
+    --success-color: #28a745;
+    /* Color verde para mensajes de éxito */
+    --danger-color: #dc3545;
+    /* Color rojo para mensajes de error */
+    --border-color: #ccc;
+    /* Color gris claro para bordes de inputs */
+    --focus-color: #007bff;
+    /* Color azul para estado focus de elementos */
+    --text-color: #333;
+    /* Color gris oscuro para texto principal */
+    --background-color: #f9f9f9;
+    /* Color gris muy claro para fondos */
+    --shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil con transparencia */
+    --border-radius: 4px;
+    /* Radio de esquinas redondeadas estándar */
+    --spacing-sm: 5px;
+    /* Espaciado pequeño para márgenes y padding */
+    --spacing-md: 10px;
+    /* Espaciado mediano para márgenes y padding */
+    --spacing-lg: 20px;
+    /* Espaciado grande para márgenes y padding */
+}
+
+/* ===== HEADER BLOCK ===== */
+.header {
+    /* Block BEM para el encabezado de la página */
+    display: flex;
+    /* Convierte el contenedor en flexbox */
+    justify-content: center;
+    /* Centra horizontalmente el contenido */
+    margin-top: 20px;
+    /* Añade margen superior de 20px */
+}
+
+/* ===== MAIN BLOCK ===== */
+.main {
+    /* Block BEM para el contenido principal */
+    display: flex;
+    /* Convierte el contenedor en flexbox */
+    justify-content: center;
+    /* Centra horizontalmente el formulario */
+}
+
+/* ===== FORM BLOCK ===== */
+/* Contenedor principal del formulario */
+.form {
+    /* Block BEM que representa todo el formulario */
+    display: flex;
+    /* Activa flexbox para organizar elementos verticalmente */
+    box-shadow: 3px 3px 6px;
+    /* Sombra: 3px derecha, 3px abajo, 6px difuminado */
+    border-radius: 10px;
+    /* Esquinas redondeadas de 10px */
+    width: 350px;
+    /* Ancho fijo de 350 píxeles */
+    height: 500px;
+    /* Alto fijo de 500 píxeles */
+    align-items: center;
+    /* Centra elementos horizontalmente dentro del flex */
+    flex-direction: column;
+    /* Organiza elementos en columna (vertical) */
+    justify-content: center;
+    /* Centra elementos verticalmente dentro del flex */
+    margin-top: 60px;
+    /* Margen superior de 60px para separar del header */
+}
+
+/* Contenedor de cada campo del formulario */
+.form__field {
+    /* Element BEM que agrupa label + input */
+    display: flex;
+    /* Activa flexbox para organizar label e input */
+    flex-direction: column;
+    /* Organiza label e input en columna */
+    justify-content: space-between;
+    /* Distribuye espacio entre label e input */
+    margin-bottom: 20px;
+    /* Margen inferior para separar campos */
+}
+
+/* Etiquetas de los campos */
+.form__label {
+    /* Element BEM para las etiquetas de los campos */
+    margin-bottom: 5px;
+    /* Espacio de 5px entre label e input */
+    font-weight: bold;
+    /* Texto en negrita para destacar */
+}
+
+/* Estilos base para inputs */
+.form__input {
+    /* Element BEM base para todos los inputs */
+    padding: 8px;
+    /* Espacio interno de 8px en todos los lados */
+    border: 1px solid #ccc;
+    /* Borde sólido de 1px color gris claro */
+    border-radius: 4px;
+    /* Esquinas redondeadas de 4px */
+    font-size: 14px;
+    /* Tamaño de fuente de 14 píxeles */
+}
+
+/* Estado focus de los inputs */
+.form__input:focus {
+    /* Pseudo-clase que se activa cuando el input tiene foco */
+    outline: none;
+    /* Elimina el outline azul por defecto del navegador */
+    border-color: #007bff;
+    /* Cambia el color del borde a azul */
+}
+
+/* Modifier para campos requeridos */
+.form__input--required:required {
+    /* Modifier BEM + pseudo-clase :required */
+    border-color: brown;
+    /* Borde marrón para campos obligatorios */
+}
+
+/* Botón de envío del formulario */
+.form__button {
+    /* Element BEM para el botón de envío */
+    padding: 10px 20px;
+    /* Padding: 10px arriba/abajo, 20px izq/der */
+    background-color: #007bff;
+    /* Fondo azul usando variable CSS */
+    color: white;
+    /* Texto blanco para contraste */
+    border: none;
+    /* Elimina el borde por defecto del botón */
+    border-radius: 4px;
+    /* Esquinas redondeadas de 4px */
+    cursor: pointer;
+    /* Cambia cursor a manita al pasar por encima */
+    margin-top: 10px;
+    /* Margen superior para separar de los campos */
+}
+
+/* Estado hover del botón */
+.form__button:hover {
+    /* Pseudo-clase que se activa al pasar el mouse */
+    background-color: #0056b3;
+    /* Fondo azul más oscuro en hover */
+}
+
+
+/* ===== MENSAJE BLOCK ===== */
+/* Estado oculto del mensaje de éxito */
+.mensaje--exito {
+    /* Modifier BEM para mensaje de éxito */
+    display: none;
+    /* Oculta el elemento por completo */
+}
+
+/* Estado visible cuando se activa con :target */
+.mensaje--exito:target {
+    /* Pseudo-clase :target se activa cuando URL contiene #enviado */
+    display: flex;
+    /* Muestra el elemento como flexbox */
+    flex-direction: column;
+    /* Organiza contenido en columna vertical */
+    justify-content: center;
+    /* Centra contenido verticalmente */
+    align-items: center;
+    /* Centra contenido horizontalmente */
+    position: fixed;
+    /* Posición fija respecto a la ventana del navegador */
+    top: 0;
+    /* Posiciona en la parte superior (0px desde arriba) */
+    left: 0;
+    /* Posiciona en la parte izquierda (0px desde izquierda) */
+    width: 100%;
+    /* Ocupa todo el ancho de la ventana */
+    height: 100%;
+    /* Ocupa toda la altura de la ventana */
+    z-index: 10;
+    /* Capa superior para aparecer sobre otros elementos */
+    background: rgba(40, 167, 69, 0.95);
+    /* Fondo verde semitransparente (95% opacidad) */
+    color: white;
+    /* Texto blanco para contraste con fondo verde */
+    padding: 20px;
+    /* Espacio interno de 20px en todos los lados */
+    font-size: 18px;
+    /* Tamaño de fuente grande para destacar */
+    font-weight: bold;
+    /* Texto en negrita para mayor impacto visual */
+}
+
+/* Botón para cerrar el mensaje */
+.mensaje__close {
+    /* Element BEM para el enlace de cerrar */
+    color: white;
+    /* Texto blanco para mantener consistencia */
+    text-decoration: none;
+    /* Elimina el subrayado del enlace */
+    margin-top: 10px;
+    /* Margen superior para separar del mensaje */
+}
+
+/* Oculta el mensaje cuando se hace clic en cerrar */
+.mensaje__close:target {
+    /* Pseudo-clase :target para el enlace de cerrar */
+    display: none;
+    /* Oculta todo el mensaje cuando se activa este target */
+}
