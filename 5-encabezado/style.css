@@ -1,0 +1,145 @@
+/*
+   Variables para el encabezado de seccion - colores reutilizables
+*/
+:root {
+    --color: black;
+    /* Color principal para textos y elementos */
+    --background: rgba(100, 100, 100, 0.3);
+    /* Fondo gris translucido */
+}
+
+/*
+   Reset basico - elimina estilos por defecto del navegador
+*/
+* {
+    box-sizing: border-box;
+    /* Incluye padding y border en el tamaño total */
+    margin: 0;
+    /* Elimina margenes por defecto */
+    padding: 0;
+    /* Elimina padding por defecto */
+}
+
+/*
+   Encabezado de seccion principal usando flexbox
+*/
+.encabezado-seccion {
+    margin-top: 15px;
+    /* Espacio superior desde el borde de la pagina */
+    display: flex;
+    /* Activa flexbox para organizar elementos en fila */
+    color: var(--color);
+    /* Color de texto usando variable CSS */
+    width: 100%;
+    /* Ocupa todo el ancho disponible */
+    height: 80px;
+    /* Altura fija del encabezado */
+    box-shadow: 3px 3px 8px var(--color);
+    /* Sombra: 3px derecha, 3px abajo, 8px difuminado */
+    border-radius: 12px;
+    /* Esquinas redondeadas de 12 pixeles */
+    gap: 80px;
+    /* Espacio de 80px entre elementos flexbox */
+    justify-content: end;
+    /* Alinea elementos hacia la derecha */
+    align-items: center;
+    /* Centra elementos verticalmente */
+}
+
+/*
+   Logo del encabezado - imagen de la empresa
+*/
+.encabezado-seccion__elemento-logo {
+    margin-left: 15px;
+    /* Espacio desde el borde izquierdo */
+    width: 50px;
+    /* Ancho fijo de 50 pixeles */
+    margin-right: auto;
+    /* Empuja todos los elementos siguientes hacia la derecha */
+}
+
+/*
+   Titulo de la empresa - nombre principal
+*/
+.encabezado-seccion__elemento-titulo {
+    font-size: 24px;
+    /* Tamaño de fuente grande para destacar */
+    color: var(--color);
+    /* Color negro usando variable */
+    margin-right: auto;
+    /* Empuja elementos siguientes hacia la derecha */
+    margin-left: 20px;
+    /* Espacio de 20px desde el logo */
+}
+
+/*
+   Enlaces de navegacion - menu principal
+*/
+.encabezado-seccion__elemento-enlace {
+    text-decoration: none;
+    /* Elimina el subrayado de los enlaces */
+    color: var(--color);
+    /* Color negro para los enlaces */
+    margin-right: 15px;
+    /* Espacio de 15px entre cada enlace */
+}
+
+/*
+   Efecto hover para enlaces - interaccion del usuario
+*/
+.encabezado-seccion__elemento-enlace:hover {
+    text-shadow: 2px 2px 4px var(--color);
+    /* Sombra de texto al pasar el mouse */
+    font-size: 16px;
+    /* Aumenta el tamaño de fuente en hover */
+}
+
+/*
+   Boton de registro - llamada a la accion
+*/
+.encabezado-seccion__elemento-boton {
+    background-color: var(--color);
+    /* Fondo negro usando variable */
+    color: white;
+    /* Texto blanco para contraste */
+    border: none;
+    /* Elimina el borde por defecto del boton */
+    padding: 8px 16px;
+    /* Padding: 8px arriba/abajo, 16px izquierda/derecha */
+    border-radius: 5px;
+    /* Esquinas redondeadas de 5 pixeles */
+    margin-right: 20px;
+    /* Espacio desde el borde derecho */
+    cursor: pointer;
+    /* Cambia el cursor a manita al pasar por encima */
+}
+
+/*
+   Efecto hover del boton - feedback visual
+*/
+.encabezado-seccion__elemento-boton:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Fondo negro semitransparente en hover */
+}
+
+/*
+   Contenido principal - seccion debajo del encabezado
+*/
+.contenido-principal {
+    display: flex;
+    /* Activa flexbox para centrar contenido */
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
+    min-height: 70vh;
+    /* Altura minima del 70% de la ventana */
+}
+
+/*
+   Elemento del contenido - texto principal de la pagina
+*/
+.contenido-principal__elemento {
+    font-size: 22px;
+    /* Tamaño de fuente grande para destacar el contenido */
+}
