@@ -70,31 +70,45 @@
     /* Sombra: 3px derecha, 3px abajo, 6px difuminado */
     border-radius: 10px;
     /* Esquinas redondeadas de 10px */
-    width: 350px;
-    /* Ancho fijo de 350 píxeles */
-    height: 500px;
-    /* Alto fijo de 500 píxeles */
-    align-items: center;
-    /* Centra elementos horizontalmente dentro del flex */
+    width: 500px;
+    /* Ancho aumentado para acomodar 2 columnas */
+    padding: 30px;
+    /* Padding interno para espaciado */
+    align-items: stretch;
+    /* Estira elementos para ocupar todo el ancho */
     flex-direction: column;
     /* Organiza elementos en columna (vertical) */
-    justify-content: center;
-    /* Centra elementos verticalmente dentro del flex */
     margin-top: 60px;
     /* Margen superior de 60px para separar del header */
+}
+
+/* Contenedor de fila para campos en columnas */
+.form__row {
+    /* Element BEM para agrupar campos en filas */
+    display: flex;
+    /* Organiza campos lado a lado */
+    gap: 10px;
+    /* Espacio entre campos */
 }
 
 /* Contenedor de cada campo del formulario */
 .form__field {
     /* Element BEM que agrupa label + input */
     display: flex;
-    /* Activa flexbox para organizar label e input */
+    /* Organiza label e input verticalmente */
     flex-direction: column;
-    /* Organiza label e input en columna */
-    justify-content: space-between;
-    /* Distribuye espacio entre label e input */
-    margin-bottom: 20px;
-    /* Margen inferior para separar campos */
+    /* Label arriba, input abajo */
+    flex: 1;
+    /* Cada campo ocupa el mismo espacio */
+    margin-bottom: 15px;
+    /* Espacio entre filas */
+}
+
+/* Modifier para campos de ancho completo */
+.form__field--full {
+    /* Campos que ocupan toda la fila como comentarios */
+    flex: none;
+    /* No comparte espacio con otros */
 }
 
 /* Etiquetas de los campos */

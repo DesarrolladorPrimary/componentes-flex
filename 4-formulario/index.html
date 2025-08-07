@@ -16,31 +16,37 @@
     <main class="main">
         <form class="form" action="#enviado">
 
-            <div class="form__field">
-                <label class="form__label" for="nombre">Nombre:</label>
-                <input class="form__input form__input--required" type="text" id="nombre" required>
+            <!-- Fila 1: Nombre y Apellido -->
+            <div class="form__row">
+                <div class="form__field">
+                    <label class="form__label" for="nombre">Nombre:</label>
+                    <input class="form__input form__input--required" type="text" id="nombre" required>
+                </div>
+
+                <div class="form__field">
+                    <label class="form__label" for="apellido">Apellido:</label>
+                    <input class="form__input form__input--required" type="text" id="apellido" required>
+                </div>
             </div>
 
-            <div class="form__field">
-                <label class="form__label" for="apellido">Apellido:</label>
-                <input class="form__input form__input--required" type="text" id="apellido" required>
+            <!-- Fila 2: Edad y Correo -->
+            <div class="form__row">
+                <div class="form__field">
+                    <label class="form__label" for="edad">Edad:</label>
+                    <input class="form__input form__input--required form__input--number" type="number" id="edad" required>
+                </div>
+
+                <div class="form__field">
+                    <label class="form__label" for="correo">Correo:</label>
+                    <input class="form__input form__input--required" type="email" id="correo" required>
+                </div>
             </div>
 
-            <div class="form__field">
-                <label class="form__label" for="edad">Edad:</label>
-                <input class="form__input form__input--required form__input--number" type="number" id="edad" required>
-            </div>
-
-            <div class="form__field">
-                <label class="form__label" for="correo">Correo:</label>
-                <input class="form__input form__input--required" type="email" id="correo" required>
-            </div>
-
-            <div class="form__field">
+            <!-- Fila 3: Comentarios (ancho completo) -->
+            <div class="form__field form__field--full">
                 <label class="form__label" for="comentarios">Comentarios:</label>
-                <textarea class="form__input" type="" id="comentarios"> </textarea>
+                <textarea class="form__input" id="comentarios" rows="4"></textarea>
             </div>
-
 
             <button class="form__button" type="submit">Enviar</button>
         </form>
