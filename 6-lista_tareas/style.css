@@ -1,0 +1,148 @@
+/**
+ * Lista de Tareas - CSS con metodología BEM
+ * Estructura: Block__Element--Modifier
+ */
+
+/* Reset básico - elimina espacios por defecto de todos los elementos */
+* {
+    margin: 0;
+    /* Quita márgenes externos */
+    padding: 0;
+    /* Quita espacios internos */
+    box-sizing: border-box;
+    /* Incluye padding y border en el ancho total */
+}
+
+/* Variables CSS - colores y medidas reutilizables */
+:root {
+    --color-primary: #333;
+    /* Gris oscuro para títulos principales */
+    --color-text: #555;
+    /* Gris medio para texto normal */
+    --color-bg: #f9f9f9;
+    /* Gris muy claro para fondos */
+    --color-white: white;
+    /* Blanco puro para tarjetas */
+    --color-border: #ddd;
+    /* Gris claro para bordes */
+    --spacing: 20px;
+    /* Espaciado estándar entre elementos */
+}
+
+/* Bloque principal: todo-list - contenedor general de la aplicación */
+.todo-list {
+    max-width: 600px;
+    /* Limita el ancho máximo para mejor legibilidad */
+    margin: 0 auto;
+    /* Centra horizontalmente en la página */
+    padding: var(--spacing);
+    /* Añade espacio interno usando la variable */
+    font-family: Arial, sans-serif;
+    /* Define la tipografía base */
+}
+
+/* Elemento: header - zona del título principal */
+.todo-list__header {
+    text-align: center;
+    /* Centra el contenido del encabezado */
+    margin-bottom: 30px;
+    /* Espacio debajo del encabezado */
+    padding-bottom: var(--spacing);
+    /* Espacio interno inferior */
+    border-bottom: 2px solid var(--color-border);
+    /* Línea separadora debajo */
+}
+
+/* Elemento: título principal - "Lista de tareas" */
+.todo-list__title {
+    color: var(--color-primary);
+    /* Color gris oscuro para destacar */
+    font-size: 2rem;
+    /* Tamaño grande (32px aproximadamente) */
+    font-weight: bold;
+    /* Texto en negrita para mayor impacto */
+}
+
+/* Elemento: contenido principal - área donde van las tareas */
+.todo-list__main {
+    background-color: var(--color-bg);
+    /* Fondo gris claro para distinguir del resto */
+    border-radius: 8px;
+    /* Esquinas redondeadas para suavizar */
+    padding: var(--spacing);
+    /* Espacio interno para que no toque los bordes */
+}
+
+/* Elemento: sección - contenedor de cada grupo de tareas */
+.todo-list__section {
+    margin-bottom: var(--spacing);
+    /* Espacio debajo por si hay más secciones */
+}
+
+/* Elemento: título de sección - "Tareas pendientes" */
+.todo-list__section-title {
+    color: var(--color-text);
+    /* Color gris medio, menos prominente que el título principal */
+    font-size: 1.5rem;
+    /* Tamaño mediano (24px aproximadamente) */
+    margin-bottom: 15px;
+    /* Espacio debajo del título */
+    padding-bottom: 10px;
+    /* Espacio antes de la línea separadora */
+    border-bottom: 1px solid var(--color-border);
+    /* Línea fina para separar del contenido */
+}
+
+/* Elemento: lista de items - contenedor de todas las tareas */
+.todo-list__items {
+    display: flex;
+    /* Usa flexbox para mejor control del layout */
+    flex-direction: column;
+    /* Apila las tareas una debajo de otra */
+    gap: var(--spacing);
+    /* Espacio uniforme entre cada tarea */
+    list-style: none;
+    /* Quita los puntos de lista por defecto */
+    padding: 0;
+    /* Sin espacios internos */
+    margin: 0;
+    /* Sin márgenes externos */
+}
+
+/* Elemento: item individual - cada tarea por separado */
+.todo-list__item {
+    display: flex;
+    /* Flexbox para alinear checkbox y texto */
+    align-items: center;
+    /* Centra verticalmente el contenido */
+    padding: 12px;
+    /* Espacio interno para que no se vea apretado */
+    background-color: var(--color-white);
+    /* Fondo blanco para destacar */
+    border-radius: 6px;
+    /* Esquinas redondeadas más sutiles */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Sombra ligera para efecto de tarjeta */
+}
+
+/* Elemento: checkbox del item - casilla para marcar como completada */
+.todo-list__item-checkbox {
+    margin-right: 12px;
+    /* Espacio entre el checkbox y el texto */
+    width: 18px;
+    /* Ancho fijo para uniformidad */
+    height: 18px;
+    /* Alto fijo para mantener proporción cuadrada */
+    cursor: pointer;
+    /* Cambia el cursor a manita al pasar por encima */
+}
+
+/* Elemento: texto del item - descripción de la tarea */
+.todo-list__item-text {
+    flex: 1;
+    /* Ocupa todo el espacio disponible después del checkbox */
+    font-size: 1rem;
+    /* Tamaño normal de texto (16px aproximadamente) */
+    color: var(--color-primary);
+    /* Color gris oscuro para buena legibilidad */
+}
