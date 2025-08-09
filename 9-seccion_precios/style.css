@@ -1,0 +1,274 @@
+/* Reset universal - Elimina márgenes, padding y establece box-sizing */
+* {
+    margin: 0;
+    /* Elimina márgenes externos por defecto */
+    padding: 0;
+    /* Elimina espacios internos por defecto */
+    box-sizing: border-box;
+    /* Incluye padding y border en el tamaño total */
+}
+
+/* Variables CSS globales - Define la paleta de colores y valores reutilizables */
+:root {
+    --primary-color: #2c3e50;
+    /* Gris azulado oscuro para títulos y texto principal */
+    --secondary-color: #3498db;
+    /* Azul brillante para acentos y plan destacado */
+    --success-color: #27ae60;
+    /* Verde para elementos de éxito (no usado actualmente) */
+    --white: #ffffff;
+    /* Blanco puro para fondos de tarjetas */
+    --gray-light: #f8f9fa;
+    /* Gris muy claro para fondo general */
+    --gray-medium: #6c757d;
+    /* Gris medio para texto secundario */
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil para tarjetas normales */
+    --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+    /* Sombra más intensa para hover */
+    --border-radius: 12px;
+    /* Radio de esquinas redondeadas estándar */
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Stack de fuentes modernas */
+}
+
+/* Contenedor principal del body - Layout vertical con fondo claro */
+.body {
+    font-family: var(--font-family);
+    /* Aplica la fuente definida en variables */
+    background-color: var(--gray-light);
+    /* Fondo gris muy claro para toda la página */
+    color: var(--primary-color);
+    /* Color de texto por defecto */
+    min-height: 100vh;
+    /* Altura mínima de toda la ventana del navegador */
+    padding: 20px;
+    /* Espaciado interno de 20px en todos los lados */
+}
+
+/* Contenedor del header - Centra el título principal */
+.header {
+    text-align: center;
+    /* Centra horizontalmente el contenido */
+    margin-bottom: 40px;
+    /* Espacio de 40px debajo del header */
+}
+
+/* Título principal del header - Estilo tipográfico destacado */
+.header__title {
+    font-size: 2.5rem;
+    /* Tamaño grande de 40px aproximadamente */
+    color: var(--primary-color);
+    /* Color gris azulado oscuro para destacar */
+    font-weight: 700;
+    /* Peso de fuente extra bold */
+    margin-bottom: 10px;
+    /* Pequeño espacio debajo del título */
+}
+
+/* Bloque principal de precios - Contenedor de toda la sección */
+.pricing {
+    max-width: 1200px;
+    /* Limita el ancho máximo para mejor legibilidad */
+    margin: 0 auto;
+    /* Centra horizontalmente en la página */
+}
+
+/* Título de la sección de precios */
+.pricing__title {
+    text-align: center;
+    /* Centra el texto horizontalmente */
+    font-size: 2rem;
+    /* Tamaño de 32px aproximadamente */
+    color: var(--primary-color);
+    /* Color gris azulado oscuro */
+    margin-bottom: 50px;
+    /* Espacio generoso debajo del título */
+    font-weight: 600;
+    /* Peso semi-bold para destacar sin ser demasiado pesado */
+}
+
+/* Contenedor de las tarjetas - Layout flexbox horizontal */
+.pricing__container {
+    display: flex;
+    /* Activa flexbox para organizar tarjetas horizontalmente */
+    justify-content: center;
+    /* Centra las tarjetas en el contenedor */
+    gap: 30px;
+    /* Espacio uniforme de 30px entre tarjetas */
+    flex-wrap: wrap;
+    /* Permite que las tarjetas bajen a otra línea en pantallas pequeñas */
+}
+
+/* Tarjeta individual de precio - Card base */
+.pricing__card {
+    background: var(--white);
+    /* Fondo blanco puro para destacar */
+    border-radius: var(--border-radius);
+    /* Esquinas redondeadas de 12px */
+    box-shadow: var(--shadow);
+    /* Sombra sutil definida en variables */
+    padding: 40px 30px;
+    /* Espaciado interno: 40px arriba/abajo, 30px izq/der */
+    width: 320px;
+    /* Ancho fijo para mantener consistencia */
+    text-align: center;
+    /* Centra todo el contenido de la tarjeta */
+    position: relative;
+    /* Permite posicionar elementos absolutamente dentro */
+    transition: all 0.3s ease;
+    /* Transición suave para todos los cambios */
+}
+
+/* Estado hover de las tarjetas */
+.pricing__card:hover {
+    transform: translateY(-5px);
+    /* Eleva la tarjeta 5px hacia arriba */
+    box-shadow: var(--shadow-hover);
+    /* Sombra más intensa al pasar el mouse */
+}
+
+/* Modifier para tarjeta destacada (Pro) */
+.pricing__card--pro {
+    border: 3px solid var(--secondary-color);
+    /* Borde azul de 3px para destacar */
+    transform: scale(1.05);
+    /* Aumenta el tamaño 5% para llamar la atención */
+}
+
+/* Badge "Más Popular" para plan destacado */
+.pricing__badge {
+    position: absolute;
+    /* Posicionamiento absoluto respecto a la tarjeta */
+    top: -15px;
+    /* Posiciona 15px arriba del borde superior */
+    left: 50%;
+    /* Mueve al 50% del ancho de la tarjeta */
+    transform: translateX(-50%);
+    /* Centra perfectamente el badge */
+    background: var(--secondary-color);
+    /* Fondo azul para destacar */
+    color: var(--white);
+    /* Texto blanco para contraste */
+    padding: 8px 20px;
+    /* Espaciado interno: 8px arriba/abajo, 20px izq/der */
+    border-radius: 20px;
+    /* Esquinas muy redondeadas para efecto pill */
+    font-size: 0.9rem;
+    /* Tamaño de fuente ligeramente menor */
+    font-weight: 600;
+    /* Peso semi-bold para destacar */
+}
+
+/* Título de cada tarjeta */
+.pricing__card-title {
+    font-size: 1.8rem;
+    /* Tamaño de 28.8px aproximadamente */
+    color: var(--primary-color);
+    /* Color gris azulado oscuro */
+    margin-bottom: 20px;
+    /* Espacio de 20px debajo del título */
+    font-weight: 600;
+    /* Peso semi-bold para destacar */
+}
+
+/* Contenedor del precio */
+.pricing__price {
+    margin-bottom: 30px;
+    /* Espacio de 30px debajo del precio */
+}
+
+/* Símbolo de moneda */
+.pricing__currency {
+    font-size: 1.5rem;
+    /* Tamaño de 24px aproximadamente */
+    color: var(--gray-medium);
+    /* Color gris medio para menor prominencia */
+    vertical-align: top;
+    /* Alinea con la parte superior del número */
+}
+
+/* Cantidad del precio */
+.pricing__amount {
+    font-size: 3.5rem;
+    /* Tamaño muy grande de 56px para destacar */
+    font-weight: 700;
+    /* Peso extra bold para máximo impacto */
+    color: var(--primary-color);
+    /* Color gris azulado oscuro */
+}
+
+/* Período del precio */
+.pricing__period {
+    font-size: 1rem;
+    /* Tamaño estándar de 16px */
+    color: var(--gray-medium);
+    /* Color gris medio para menor prominencia */
+}
+
+/* Lista de características */
+.pricing__features {
+    list-style: none;
+    /* Elimina los puntos de lista por defecto */
+    margin-bottom: 30px;
+    /* Espacio de 30px debajo de la lista */
+    text-align: left;
+    /* Alinea el texto a la izquierda para mejor legibilidad */
+}
+
+/* Característica individual */
+.pricing__feature {
+    padding: 8px 0;
+    /* Espaciado vertical de 8px arriba y abajo */
+    color: var(--primary-color);
+    /* Color gris azulado oscuro para buena legibilidad */
+    font-size: 1rem;
+    /* Tamaño estándar de 16px */
+}
+
+/* Botón de acción */
+.pricing__button {
+    width: 100%;
+    /* Ocupa todo el ancho de la tarjeta */
+    padding: 15px 20px;
+    /* Espaciado interno: 15px arriba/abajo, 20px izq/der */
+    border: none;
+    /* Elimina el borde por defecto del botón */
+    border-radius: 8px;
+    /* Esquinas redondeadas de 8px */
+    font-size: 1.1rem;
+    /* Tamaño de fuente ligeramente mayor */
+    font-weight: 600;
+    /* Peso semi-bold para destacar */
+    cursor: pointer;
+    /* Cambia el cursor a manita al pasar por encima */
+    transition: all 0.3s ease;
+    /* Transición suave para todos los cambios */
+    background-color: var(--primary-color);
+    /* Fondo gris azulado oscuro */
+    color: var(--white);
+    /* Texto blanco para contraste */
+}
+
+/* Estado hover del botón */
+.pricing__button:hover {
+    background-color: #1a252f;
+    /* Fondo más oscuro al pasar el mouse */
+    transform: translateY(-2px);
+    /* Eleva el botón 2px hacia arriba */
+}
+
+/* Modifier para botón destacado */
+.pricing__button--featured {
+    background-color: var(--secondary-color);
+    /* Fondo azul para destacar del resto */
+    font-size: 1.2rem;
+    /* Tamaño ligeramente mayor para más prominencia */
+}
+
+/* Estado hover del botón destacado */
+.pricing__button--featured:hover {
+    background-color: #2980b9;
+    /* Azul más oscuro al pasar el mouse */
+}
+
