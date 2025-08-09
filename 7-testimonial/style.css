@@ -1,133 +1,233 @@
+/* Reset universal - Elimina márgenes, padding y establece box-sizing */
 * {
     margin: 0;
+    /* Elimina márgenes externos por defecto */
     padding: 0;
+    /* Elimina espacios internos por defecto */
     box-sizing: border-box;
+    /* Incluye padding y border en el tamaño total */
 }
 
+/* Variables CSS globales - Define la paleta de colores y valores reutilizables */
 :root {
     --primary-color: #2c3e50;
+    /* Gris azulado oscuro para títulos principales */
     --secondary-color: #3498db;
+    /* Azul brillante para acentos y bordes */
     --accent-color: #e74c3c;
+    /* Rojo para elementos de alerta (no usado actualmente) */
     --text-color: #2c3e50;
+    /* Color principal para texto legible */
     --text-light: #7f8c8d;
+    /* Gris medio para texto secundario */
     --bg-color: #ecf0f1;
+    /* Gris muy claro para fondos */
     --white: #ffffff;
+    /* Blanco puro para tarjetas y elementos destacados */
     --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil para elementos normales */
     --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+    /* Sombra más intensa para hover */
     --border-radius: 12px;
+    /* Radio de esquinas redondeadas estándar */
     --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Stack de fuentes modernas */
 }
 
 
+/* Contenedor principal del body - Layout vertical con fondo degradado */
 .body {
     display: flex;
+    /* Activa flexbox para organizar hijos verticalmente */
     flex-direction: column;
+    /* Apila elementos uno debajo del otro */
     gap: 60px;
+    /* Espacio uniforme de 60px entre header y testimonial */
     background: linear-gradient(135deg, var(--bg-color) 0%, #d5dbdb 100%);
+    /* Degradado diagonal de gris claro a gris medio */
     min-height: 100vh;
+    /* Altura mínima de toda la ventana del navegador */
     font-family: var(--font-family);
+    /* Aplica la fuente definida en variables */
     color: var(--text-color);
+    /* Color de texto por defecto */
 }
 
+/* Contenedor del header - Centra el contenido horizontalmente */
 .header {
     display: flex;
+    /* Activa flexbox para centrar el título */
     justify-content: center;
+    /* Centra horizontalmente el contenido */
     margin-top: 40px;
+    /* Espacio superior de 40px desde el borde */
     padding: 20px;
+    /* Espaciado interno de 20px en todos los lados */
 }
 
+/* Título principal del header - Estilo tipográfico destacado con sombra */
 .header__title {
     color: var(--primary-color);
+    /* Color gris azulado oscuro para destacar */
     font-size: 2.5rem;
+    /* Tamaño grande de 40px aproximadamente */
     font-weight: 700;
+    /* Peso de fuente extra bold */
     text-align: center;
+    /* Centra el texto horizontalmente */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil: 2px derecha, 2px abajo, 4px difuminado */
     letter-spacing: -0.5px;
+    /* Reduce ligeramente el espacio entre letras */
 }
 
+/* Bloque principal del testimonial - Centra el componente en la página */
 .testimonial {
     display: flex;
+    /* Activa flexbox para centrar la tarjeta */
     align-items: center;
+    /* Centra verticalmente el contenido */
     justify-content: center;
+    /* Centra horizontalmente el contenido */
 }
 
+/* Contenedor de la tarjeta testimonial - Card con sombra y bordes redondeados */
 .testimonial__container {
     display: flex;
+    /* Organiza avatar y contenido lado a lado */
     background: var(--white);
+    /* Fondo blanco puro para destacar */
     box-shadow: var(--shadow);
+    /* Sombra sutil definida en variables */
     border-radius: var(--border-radius);
+    /* Esquinas redondeadas de 12px */
     width: 520px;
+    /* Ancho fijo de la tarjeta */
     min-height: 280px;
+    /* Altura mínima para mantener proporciones */
     padding: 30px;
+    /* Espaciado interno generoso */
     gap: 25px;
+    /* Espacio entre avatar y contenido */
     transition: all 0.3s ease;
+    /* Transición suave para todos los cambios */
     border: 1px solid rgba(52, 152, 219, 0.1);
+    /* Borde azul muy sutil */
 }
 
+/* Estado hover del contenedor - Efecto de elevación y sombra más intensa */
 .testimonial__container:hover {
     box-shadow: var(--shadow-hover);
+    /* Sombra más intensa al pasar el mouse */
     transform: translateY(-5px);
+    /* Eleva la tarjeta 5px hacia arriba */
 }
 
 
+/* Contenedor del avatar - Centra la imagen y evita que se redimensione */
 .testimonial__avatar {
     display: flex;
+    /* Activa flexbox para centrar la imagen */
     align-items: center;
+    /* Centra verticalmente la imagen */
     justify-content: center;
+    /* Centra horizontalmente la imagen */
     flex-shrink: 0;
+    /* Evita que se redimensione cuando falta espacio */
 }
 
+/* Imagen del usuario - Avatar circular con borde y sombra */
 .testimonial__image {
     width: 120px;
+    /* Ancho fijo de 120 píxeles */
     height: 120px;
+    /* Alto fijo de 120 píxeles para mantener proporción cuadrada */
     border-radius: 50%;
+    /* Hace la imagen completamente circular */
     object-fit: cover;
+    /* Recorta la imagen para llenar el círculo sin deformar */
     border: 4px solid var(--secondary-color);
+    /* Borde azul de 4px de grosor */
     box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+    /* Sombra azul translúcida */
     transition: transform 0.3s ease;
+    /* Transición suave para el efecto hover */
 }
 
+/* Estado hover de la imagen - Efecto de escala sutil */
 .testimonial__image:hover {
     transform: scale(1.05);
+    /* Aumenta el tamaño 5% al pasar el mouse */
 }
 
+/* Contenedor del contenido textual - Layout vertical centrado */
 .testimonial__content {
     display: flex;
+    /* Activa flexbox para organizar autor y cita */
     flex-direction: column;
+    /* Apila elementos verticalmente */
     justify-content: center;
+    /* Centra verticalmente el contenido */
     gap: 15px;
+    /* Espacio de 15px entre autor y cita */
     flex: 1;
+    /* Ocupa todo el espacio disponible después del avatar */
 }
 
+/* Nombre del autor - Tipografía destacada para identificación */
 .testimonial__author {
     color: var(--primary-color);
+    /* Color gris azulado oscuro para destacar */
     font-size: 1.4rem;
+    /* Tamaño de 22.4px aproximadamente */
     font-weight: 600;
+    /* Peso semi-bold para destacar sin ser demasiado pesado */
     margin-bottom: 5px;
+    /* Pequeño espacio adicional debajo del nombre */
 }
 
+/* Cita del testimonio - Texto en cursiva con espaciado para comillas */
 .testimonial__quote {
     color: var(--text-light);
+    /* Color gris medio para texto secundario */
     font-size: 1rem;
+    /* Tamaño estándar de 16px */
     line-height: 1.6;
+    /* Interlineado de 1.6 para mejor legibilidad */
     font-style: italic;
+    /* Cursiva para indicar que es una cita */
     position: relative;
+    /* Permite posicionar pseudo-elementos absolutamente */
     padding-left: 20px;
+    /* Espacio izquierdo para la comilla de apertura */
 }
 
+/* Comilla de apertura - Pseudo-elemento decorativo posicionado */
 .testimonial__quote::before {
     content: '"';
+    /* Inserta comilla de apertura */
     position: absolute;
+    /* Posicionamiento absoluto respecto al párrafo */
     left: 0;
+    /* Posiciona en el borde izquierdo */
     top: -5px;
+    /* Eleva 5px para alinear con el texto */
     font-size: 2rem;
+    /* Tamaño grande de 32px para destacar */
     color: var(--secondary-color);
+    /* Color azul para diferenciarse del texto */
     font-weight: bold;
+    /* Negrita para mayor presencia visual */
 }
 
+/* Comilla de cierre - Pseudo-elemento decorativo al final del texto */
 .testimonial__quote::after {
     content: '"';
+    /* Inserta comilla de cierre */
     color: var(--secondary-color);
+    /* Color azul consistente con la apertura */
     font-size: 1.2rem;
+    /* Tamaño menor que la apertura (19.2px) */
     font-weight: bold;
+    /* Negrita para consistencia visual */
 }
