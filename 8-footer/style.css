@@ -1,0 +1,93 @@
+/* Variables CSS globales para reutilizar valores */
+:root {
+    --color-primary: #4CAF50; /* Color verde principal para títulos y enlaces */
+    --color-background: #333; /* Color de fondo oscuro del footer */
+    --color-text-light: white; /* Color de texto claro */
+    --color-text-muted: #ddd; /* Color de texto gris claro */
+    --spacing-sm: 8px; /* Espaciado pequeño */
+    --spacing-md: 15px; /* Espaciado mediano */
+    --spacing-lg: 20px; /* Espaciado grande */
+    --spacing-xl: 30px; /* Espaciado extra grande */
+    --font-size-title: 18px; /* Tamaño de fuente para títulos */
+    --line-height-text: 1.5; /* Altura de línea para texto */
+    --transition-speed: 0.3s; /* Velocidad de transición */
+}
+
+/* Selector universal que aplica a todos los elementos */
+* {
+    margin: 0; /* Elimina márgenes por defecto de todos los elementos */
+    padding: 0; /* Elimina padding por defecto de todos los elementos */
+    box-sizing: border-box; /* Incluye padding y border en el tamaño total del elemento */
+}
+
+/* Elemento body - contenedor principal de la página */
+body {
+    min-height: 100vh; /* Altura mínima del 100% de la ventana del navegador */
+    display: flex; /* Convierte el body en un contenedor flexbox */
+    flex-direction: column; /* Los elementos hijos se apilan verticalmente */
+}
+
+/* Contenido principal de la página */
+.main {
+    flex: 1; /* Crece para ocupar todo el espacio disponible (empuja el footer hacia abajo) */
+    display: flex; /* Convierte el main en contenedor flexbox */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+}
+
+/* Footer principal de la página */
+.footer {
+    display: flex; /* Convierte el footer en contenedor flexbox horizontal */
+    justify-content: space-around; /* Distribuye las secciones con espacio igual alrededor */
+    background-color: var(--color-background); /* Fondo gris oscuro usando variable */
+    color: var(--color-text-light); /* Color de texto blanco usando variable */
+    padding: var(--spacing-xl) var(--spacing-lg); /* Espaciado interno usando variables */
+    margin-top: var(--spacing-lg); /* Margen superior usando variable */
+}
+
+/* Títulos de las secciones del footer */
+.footer__title {
+    color: var(--color-primary); /* Color verde para destacar los títulos usando variable */
+    margin-bottom: var(--spacing-md); /* Espacio inferior usando variable */
+    font-size: var(--font-size-title); /* Tamaño de fuente usando variable */
+}
+
+/* Párrafos de texto dentro del footer */
+.footer__text {
+    margin-bottom: var(--spacing-sm); /* Espacio inferior entre párrafos usando variable */
+    line-height: var(--line-height-text); /* Altura de línea para mejor legibilidad usando variable */
+}
+
+/* Lista de redes sociales */
+.footer__social-list {
+    list-style: none; /* Elimina los puntos o números de la lista */
+}
+
+/* Elementos individuales de la lista de redes sociales */
+.footer__social-item {
+    margin-bottom: var(--spacing-sm); /* Espacio inferior entre cada elemento usando variable */
+}
+
+/* Enlaces de redes sociales */
+.footer__social-link {
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    color: var(--color-text-muted); /* Color gris claro para los enlaces sociales usando variable */
+    transition: color var(--transition-speed); /* Transición suave de color usando variable */
+}
+
+/* Estado hover para enlaces de redes sociales */
+.footer__social-link:hover {
+    color: var(--color-primary); /* Cambia a verde cuando se pasa el mouse por encima usando variable */
+}
+
+/* Enlaces generales del footer (políticas, términos) */
+.footer__link {
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    color: var(--color-primary); /* Color verde desde el inicio usando variable */
+    transition: color var(--transition-speed); /* Transición suave de color usando variable */
+}
+
+/* Estado hover para enlaces generales */
+.footer__link:hover {
+    color: var(--color-text-light); /* Cambia a blanco cuando se pasa el mouse por encima usando variable */
+}
