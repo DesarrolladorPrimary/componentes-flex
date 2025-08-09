@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar</title>
+</head>
+
+<body class="body">
+    <div class="layout">
+
+        <aside class="sidebar">
+            <div class="sidebar__header">
+                <h2 class="sidebar__title">Dashboard</h2>
+            </div>
+
+            <div class="sidebar__user">
+                <div class="sidebar__user-info">
+                    <span class="sidebar__username">Keiner Arismendy</span>
+                    <span class="sidebar__role">Administrador</span>
+                </div>
+            </div>
+
+            <nav class="sidebar__nav">
+                <ul class="sidebar__menu">
+                    <li class="sidebar__item">
+                        <a href="#inicio" class="sidebar__link sidebar__link--active">
+                            <span class="sidebar__text">Inicio</span>
+                        </a>
+                    </li>
+                    <li class="sidebar__item">
+                        <a href="#usuarios" class="sidebar__link">
+                            <span class="sidebar__text">Usuarios</span>
+                        </a>
+                    </li>
+                    <li class="sidebar__item">
+                        <a href="#productos" class="sidebar__link">
+                            <span class="sidebar__text">Productos</span>
+                        </a>
+                    </li>
+                    <li class="sidebar__item">
+                        <a href="#ventas" class="sidebar__link">
+                            <span class="sidebar__text">Ventas</span>
+                        </a>
+                    </li>
+                    <li class="sidebar__item">
+                        <a href="#configuracion" class="sidebar__link">
+                            <span class="sidebar__text">Configuración</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <header class="content__header">
+                <h1 class="content__title">Bienvenido al Dashboard</h1>
+                <p class="content__subtitle">Gestiona tu aplicación desde aquí</p>
+            </header>
+
+            <div class="content__main">
+                <div class="content__card">
+                    <h3 class="content__card-title">Contenido Principal</h3>
+                    <p class="content__card-text">
+                        Este es el área principal donde se mostraría el contenido
+                        correspondiente a la sección seleccionada en el sidebar.
+                    </p>
+                    <p class="content__card-text">
+                        El sidebar utiliza Flexbox para organizar los elementos
+                        de navegación de manera vertical y responsiva.
+                    </p>
+                </div>
+            </div>
+        </main>
+
+    </div>
+</body>
+
+</html>

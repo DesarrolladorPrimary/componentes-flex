@@ -1,0 +1,200 @@
+/* Reset universal - Elimina márgenes, padding y establece box-sizing */
+* {
+    margin: 0; /* Elimina márgenes externos por defecto */
+    padding: 0; /* Elimina espacios internos por defecto */
+    box-sizing: border-box; /* Incluye padding y border en el tamaño total */
+}
+
+/* Variables CSS globales - Define la paleta de colores y valores reutilizables */
+:root {
+    --sidebar-width: 280px; /* Ancho fijo del sidebar */
+    --primary-color: #2c3e50; /* Gris azulado oscuro para fondos principales */
+    --secondary-color: #34495e; /* Gris azulado medio para elementos secundarios */
+    --accent-color: #3498db; /* Azul brillante para elementos activos */
+    --text-color: #ecf0f1; /* Gris muy claro para texto en sidebar */
+    --text-dark: #2c3e50; /* Gris oscuro para texto en contenido principal */
+    --bg-light: #f8f9fa; /* Gris muy claro para fondo del contenido */
+    --white: #ffffff; /* Blanco puro para tarjetas */
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    --border-radius: 8px; /* Radio de esquinas redondeadas */
+    --transition: all 0.3s ease; /* Transición suave estándar */
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Stack de fuentes modernas */
+}
+
+/* Contenedor principal del body - Configuración base */
+.body {
+    font-family: var(--font-family); /* Aplica la fuente definida en variables */
+    background-color: var(--bg-light); /* Fondo gris muy claro */
+    color: var(--text-dark); /* Color de texto oscuro por defecto */
+    min-height: 100vh; /* Altura mínima de toda la ventana del navegador */
+}
+
+/* Layout principal - Contenedor flexbox horizontal */
+.layout {
+    display: flex; /* Activa flexbox para organizar sidebar y contenido lado a lado */
+    min-height: 100vh; /* Altura mínima de toda la ventana */
+}
+
+/* Sidebar - Barra lateral de navegación */
+.sidebar {
+    width: var(--sidebar-width); /* Ancho fijo definido en variables */
+    background-color: var(--primary-color); /* Fondo gris azulado oscuro */
+    color: var(--text-color); /* Texto gris muy claro para contraste */
+    display: flex; /* Activa flexbox para organizar header, nav y footer verticalmente */
+    flex-direction: column; /* Apila elementos uno debajo del otro */
+    box-shadow: var(--shadow); /* Sombra sutil para separar del contenido */
+    position: fixed; /* Posición fija para que no se mueva al hacer scroll */
+    height: 100vh; /* Altura completa de la ventana */
+    left: 0; /* Posiciona en el borde izquierdo */
+    top: 0; /* Posiciona en el borde superior */
+}
+
+/* Header del sidebar - Zona del título */
+.sidebar__header {
+    padding: 20px; /* Espaciado interno de 20px en todos los lados */
+    border-bottom: 1px solid var(--secondary-color); /* Línea separadora inferior */
+}
+
+/* Título del sidebar */
+.sidebar__title {
+    font-size: 1.5rem; /* Tamaño de 24px aproximadamente */
+    font-weight: 600; /* Peso semi-bold */
+    color: var(--text-color); /* Color gris muy claro */
+}
+
+/* Información del usuario - Contenedor flexbox */
+.sidebar__user {
+    padding: 20px; /* Espaciado interno de 20px en todos los lados */
+    border-bottom: 1px solid var(--secondary-color); /* Línea separadora inferior */
+}
+
+/* Información del usuario - Contenedor de nombre y rol */
+.sidebar__user-info {
+    display: flex; /* Activa flexbox para organizar nombre y rol verticalmente */
+    flex-direction: column; /* Apila nombre y rol uno debajo del otro */
+}
+
+/* Nombre del usuario */
+.sidebar__username {
+    font-size: 1rem; /* Tamaño estándar de 16px */
+    font-weight: 600; /* Peso semi-bold para destacar */
+    color: var(--text-color); /* Color gris muy claro */
+    margin-bottom: 5px; /* Espacio de 5px debajo del nombre */
+}
+
+/* Rol del usuario */
+.sidebar__role {
+    font-size: 0.9rem; /* Tamaño de 14.4px aproximadamente */
+    color: var(--text-color); /* Color gris muy claro */
+    opacity: 0.8; /* Reduce la opacidad para menor prominencia */
+}
+
+/* Navegación del sidebar - Contenedor del menú */
+.sidebar__nav {
+    flex: 1; /* Ocupa todo el espacio disponible entre header y footer */
+    padding: 20px 0; /* Espaciado vertical de 20px arriba y abajo */
+}
+
+/* Lista del menú - Contenedor de todos los elementos de navegación */
+.sidebar__menu {
+    list-style: none; /* Elimina los puntos de lista por defecto */
+}
+
+/* Item individual del menú */
+.sidebar__item {
+    margin-bottom: 5px; /* Espacio de 5px entre elementos del menú */
+}
+
+/* Enlaces del menú - Elementos clickeables */
+.sidebar__link {
+    display: flex; /* Activa flexbox para organizar icono y texto horizontalmente */
+    align-items: center; /* Centra verticalmente icono y texto */
+    padding: 12px 20px; /* Espaciado interno: 12px arriba/abajo, 20px izq/der */
+    color: var(--text-color); /* Color gris muy claro */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    transition: var(--transition); /* Transición suave para efectos hover */
+    border-radius: 0 25px 25px 0; /* Esquinas redondeadas solo en el lado derecho */
+    margin-right: 10px; /* Margen derecho para el efecto de esquinas */
+}
+
+/* Estado hover de los enlaces */
+.sidebar__link:hover {
+    background-color: var(--secondary-color); /* Fondo gris azulado medio al pasar el mouse */
+    color: var(--white); /* Texto blanco para mejor contraste */
+}
+
+/* Modifier para enlace activo */
+.sidebar__link--active {
+    background-color: var(--accent-color); /* Fondo azul brillante para elemento activo */
+    color: var(--white); /* Texto blanco para contraste */
+}
+
+/* Texto del enlace */
+.sidebar__text {
+    font-size: 1rem; /* Tamaño estándar de 16px */
+    font-weight: 500; /* Peso medio para buena legibilidad */
+}
+
+/* Contenido principal - Área a la derecha del sidebar */
+.content {
+    flex: 1; /* Ocupa todo el espacio disponible después del sidebar */
+    margin-left: var(--sidebar-width); /* Margen izquierdo igual al ancho del sidebar */
+    padding: 30px; /* Espaciado interno de 30px en todos los lados */
+}
+
+/* Header del contenido principal */
+.content__header {
+    margin-bottom: 30px; /* Espacio de 30px debajo del header */
+}
+
+/* Título principal del contenido */
+.content__title {
+    font-size: 2.5rem; /* Tamaño grande de 40px aproximadamente */
+    color: var(--text-dark); /* Color gris oscuro */
+    font-weight: 700; /* Peso extra bold */
+    margin-bottom: 10px; /* Espacio de 10px debajo del título */
+}
+
+/* Subtítulo del contenido principal */
+.content__subtitle {
+    font-size: 1.1rem; /* Tamaño de 17.6px aproximadamente */
+    color: var(--text-dark); /* Color gris oscuro */
+    opacity: 0.7; /* Reduce la opacidad para menor prominencia */
+}
+
+/* Contenido principal - Área de las tarjetas */
+.content__main {
+    display: flex; /* Activa flexbox para organizar tarjetas */
+    flex-direction: column; /* Apila tarjetas verticalmente */
+    gap: 20px; /* Espacio de 20px entre tarjetas */
+}
+
+/* Tarjeta de contenido */
+.content__card {
+    background: var(--white); /* Fondo blanco puro */
+    border-radius: var(--border-radius); /* Esquinas redondeadas de 8px */
+    box-shadow: var(--shadow); /* Sombra sutil */
+    padding: 25px; /* Espaciado interno de 25px en todos los lados */
+}
+
+/* Título de la tarjeta */
+.content__card-title {
+    font-size: 1.3rem; /* Tamaño de 20.8px aproximadamente */
+    color: var(--text-dark); /* Color gris oscuro */
+    font-weight: 600; /* Peso semi-bold */
+    margin-bottom: 15px; /* Espacio de 15px debajo del título */
+}
+
+/* Texto de la tarjeta */
+.content__card-text {
+    font-size: 1rem; /* Tamaño estándar de 16px */
+    color: var(--text-dark); /* Color gris oscuro */
+    line-height: 1.6; /* Interlineado de 1.6 para mejor legibilidad */
+    margin-bottom: 15px; /* Espacio de 15px debajo de cada párrafo */
+}
+
+/* Último párrafo sin margen inferior */
+.content__card-text:last-child {
+    margin-bottom: 0; /* Elimina el margen del último párrafo */
+}
+
