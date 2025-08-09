@@ -38,24 +38,60 @@
     /* Sombra: 3px derecha, 3px abajo, 8px difuminado */
     border-radius: 12px;
     /* Esquinas redondeadas de 12 pixeles */
-    gap: 80px;
-    /* Espacio de 80px entre elementos flexbox */
-    justify-content: end;
-    /* Alinea elementos hacia la derecha */
+    justify-content: space-between;
+    /* Distribuye espacio: logo izquierda, nav centro, botón derecha */
     align-items: center;
     /* Centra elementos verticalmente */
+    padding: 0 20px;
+    /* Espaciado interno horizontal */
+}
+
+/*
+   Contenedor del logo y título - lado izquierdo
+*/
+.encabezado-seccion__logo-container {
+    display: flex;
+    /* Flexbox para alinear logo y título */
+    align-items: center;
+    /* Centra verticalmente logo y título */
+    gap: 15px;
+    /* Espacio entre logo y título */
+}
+
+/*
+   Navegación principal - centrada
+*/
+.encabezado-seccion__nav {
+    display: flex;
+    /* Flexbox para los enlaces de navegación */
+    gap: 30px;
+    /* Espacio entre enlaces */
+    position: absolute;
+    /* Posicionamiento absoluto para centrar */
+    left: 50%;
+    /* Mueve al 50% del contenedor */
+    transform: translateX(-50%);
+    /* Centra perfectamente */
+}
+
+/*
+   Contenedor de acciones - lado derecho
+*/
+.encabezado-seccion__actions {
+    display: flex;
+    /* Flexbox para elementos de acción */
+    align-items: center;
+    /* Centra verticalmente */
 }
 
 /*
    Logo del encabezado - imagen de la empresa
 */
 .encabezado-seccion__elemento-logo {
-    margin-left: 15px;
-    /* Espacio desde el borde izquierdo */
     width: 50px;
     /* Ancho fijo de 50 pixeles */
-    margin-right: auto;
-    /* Empuja todos los elementos siguientes hacia la derecha */
+    height: 50px;
+    /* Altura fija para mantener proporción */
 }
 
 /*
@@ -66,10 +102,8 @@
     /* Tamaño de fuente grande para destacar */
     color: var(--color);
     /* Color negro usando variable */
-    margin-right: auto;
-    /* Empuja elementos siguientes hacia la derecha */
-    margin-left: 20px;
-    /* Espacio de 20px desde el logo */
+    margin: 0;
+    /* Elimina márgenes por defecto */
 }
 
 /*
@@ -80,8 +114,10 @@
     /* Elimina el subrayado de los enlaces */
     color: var(--color);
     /* Color negro para los enlaces */
-    margin-right: 15px;
-    /* Espacio de 15px entre cada enlace */
+    font-weight: 500;
+    /* Peso de fuente medio */
+    transition: all 0.3s ease;
+    /* Transición suave para efectos hover */
 }
 
 /*
@@ -104,14 +140,16 @@
     /* Texto blanco para contraste */
     border: none;
     /* Elimina el borde por defecto del boton */
-    padding: 8px 16px;
-    /* Padding: 8px arriba/abajo, 16px izquierda/derecha */
+    padding: 10px 20px;
+    /* Padding: 10px arriba/abajo, 20px izquierda/derecha */
     border-radius: 5px;
     /* Esquinas redondeadas de 5 pixeles */
-    margin-right: 20px;
-    /* Espacio desde el borde derecho */
     cursor: pointer;
     /* Cambia el cursor a manita al pasar por encima */
+    font-weight: 500;
+    /* Peso de fuente medio */
+    transition: all 0.3s ease;
+    /* Transición suave para efectos hover */
 }
 
 /*
